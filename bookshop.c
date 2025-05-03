@@ -226,7 +226,7 @@ void viewStaff() {
 
     char line[300];
     int found = 0;
-
+printf("\n\n\n");
     while (fgets(line, sizeof(line), file)) {
         found = 1;
         line[strcspn(line, "\n")] = '\0';
@@ -235,7 +235,7 @@ void viewStaff() {
         char *contact = strtok(NULL, "$");
 
         if (id && name && contact) {
-            printf(" \n\n\t\t%s. %s: %s\n", id, name, contact);
+            printf("\t\t%s. %s: %s\n", id, name, contact);
         }
     }
 
@@ -392,7 +392,7 @@ void makeSale() {
 
     int isMember = 0;
 
-    ///vheck for member ihd member.txt
+    ///vheck for member id member.txt
     if (strcmp(memberid, "0") != 0) {
         FILE *memberFile = fopen("member.txt", "r");
         if (memberFile != NULL) {
@@ -548,8 +548,7 @@ void viewPurchases() {
         char *total = strtok(NULL, "$");
 
         if (id && title && qty && unitCost && total) {
-            printf("\t\tID: %s, Book: %s, Quantity: %s, Cost: %.2f, Total: %.2f\n",
-                   id, title, qty, atof(unitCost), atof(total));
+            printf("\t\tID: %s, Book: %s, Quantity: %s, Cost: %.2f, Total: %.2f\n",id, title, qty, atof(unitCost), atof(total));
         }
     }
 
